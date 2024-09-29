@@ -1,0 +1,48 @@
+<%- include('partials/header.ejs')  %>
+
+<section class="form-section">
+  <h1 class="title">
+    <%=editing ? 'Edit Your Post!': 'Create Your Blog!'  %>
+    
+  </h1>
+  <div class="form-container">  
+    <div class="form">
+      <form action="<%=editing ? '/update/' + postId : '/submit' %>" method="POST">
+
+        <p>
+          <label for="title">Title</label><br>
+          <input type="text" value="<%=editing ? post.title : post  %>" name="title" id="title" required>
+
+        </p>
+        <p>
+          <label for="title">Subtitle</label><br>
+          <input type="text" name="subtitle" value="<%=editing ? post.subtitle : post  %>" id="subtitle" required>
+
+        </p>
+        <p>
+          <label for="title">Name</label><br>
+          <input type="text" value="<%=editing ? post.author : post  %>" name="author" id="name" required>
+
+        </p>
+        <p>
+          <label for="body">Blog</label><br>
+          
+          <textarea name="body" id="body">
+            <%=editing ? post.body : post  %>
+          </textarea>
+        </p>
+        <p>
+          <input class="button" type="submit" value="<%=editing ? 'SAVE':'SUBMIT'%>">
+        </p>
+
+      </form>
+      
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<%- include('partials/footer.ejs')  %>

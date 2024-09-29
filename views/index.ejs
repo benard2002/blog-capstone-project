@@ -1,0 +1,58 @@
+<%-include('partials/header.ejs')  %>
+<section class="intro-section">
+  <div class="intro-content">
+
+    <div class="intro-wrap">
+      <h1 class="title"> Share Your Voice</h1>
+    
+      <p>
+        Have a story or idea to share? Write a blog and connect with readers eager to hear your perspective. Join our community today!
+        Go ahead and create a post.
+      </p>
+  
+    </div>
+  </div>
+</section>
+
+    <section class="blog-section">
+
+      <div class="blog-container">
+
+        
+
+        <% if (locals.posts){ %>
+          <% posts.forEach((post, index)=>{%>
+            
+            <hr>
+            <div class="blog-wrap">
+              
+              <div class="blog-text">
+                <a href="/viewpost/<%=index %>" class="blog-link">
+                  
+                  <h3 class="title">
+                    <%= post.title %>
+                  </h3>
+                  
+                  <p class="subtitle">
+                    <%= post.subtitle%>
+                  </p>
+                  <p class="author">
+                    Blog post by <strong><%= post.author  %> </strong> on 25 March, <%= new Date().getFullYear()%>
+                  </p>
+                </a>
+              </div>
+              
+              <a href="/delete/<%= index %>" class="delete-link"><i class="uil uil-times dlete"></i></a>
+              
+            </div>
+            
+            <%}) %>
+        <% } %>
+        <a href="/create" class="create-link"><button class="button">CREATE POST</button></a>
+      </div>
+
+    </section>
+
+
+<%-include('partials/footer.ejs')  %>
+

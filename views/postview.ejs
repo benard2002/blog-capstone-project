@@ -1,0 +1,38 @@
+<%-include('Partials/header.ejs')  %>
+
+<% if(locals.post){ %>
+  
+<div class="container my-50">
+  <div class="row">
+    
+    <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
+      <div class="col-lg-6 px-0">
+        <h1 class="display-4 fst-italic"><%=post.title%></h1>
+        <p class="lead my-3"><%=post.subtitle  %></p>
+        
+      </div>
+    </div>
+    
+    <div class="col-md-8">
+      <article class="blog-post">
+        <h2 class="display-5 link-body-emphasis mb-1">A Blog Post</h2>
+      <p class="blog-post-meta"><%=new Date().toLocaleString('default', { month: 'long' })%> <%=new Date().getDate()  %>, <%=new Date().getFullYear()%> by <a href="#"><%=post.author%></a></p>
+      
+      <p class="post-content"><%=post.body  %></p>    
+      
+    </article>
+    
+    <div>
+      <a href="/edit/<%=postId %>" class="btn btn-primary button">Edit Post</a>
+    </div>
+    
+    
+  </div>
+</div>
+</div>
+
+<% }else{ %>
+  <h1>Sorry, You haven't selected a post yet.</h1>
+<% } %>  
+<%-include('Partials/footer.ejs') %>
+

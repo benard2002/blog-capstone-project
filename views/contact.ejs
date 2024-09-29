@@ -1,0 +1,62 @@
+<%-include('Partials/header.ejs')%>
+
+
+<section class="contact-section">
+  <h1 class="contact-head title"><%=submitted ? 'Thank you! Your comment has been submitted successfully.': 'CONTACT ME!' %></h1>
+  <div class="contact-container">
+    <div class="info-wrap">
+      <i class="uil uil-phone"></i>
+      <div class="contact-details">
+        <p>
+          +233 594980743,<br>
+          chat +233 594980743
+        </p>
+        
+      </div>
+      <i class="uil uil-map-marker"></i>
+      <div class="contact-details">
+        <p>
+          Az- 001- 6064,<br>
+          KUMASI, GHANA
+        </p>
+      </div>
+      <i class="uil uil-envelope"></i>
+      <div class="contact-details">
+        <p>
+          ambenard2002<br>@gmail.com,<br>
+          X: @ben_code3
+        </p>
+      </div>
+    </div>
+    <div class="description-wrap">
+      <h4 class="title">Get in touch</h4>
+      Whether you have a question, feedback, or simply want to say hello, I'm always happy to hear from you! Fill out the form below, and I'll get back to you as soon as possible. Alternatively, feel free to reach out via email or connect with us on social media. I'm look forward to connecting with you!
+    </div>
+  </div>
+  <div class="contact-form">
+    <h5 class="title">Contact Form</h5>
+    <div class="form-wrap">
+
+      <form action="/post-comment">
+        <p>
+          <label for="email">Name:</label><br>
+          <input type="text" name="name" id="email" class="text-input" placeholder="Enter your email" required>
+        </p>
+        <p>
+          <label for="email">Email:</label><br>
+          <input type="text" name="email" id="email" class="text-input" placeholder="Enter your name" required>
+        </p>
+        
+        <label for="text">Text:</label>
+        <p>
+          <textarea name="text" id="text" placeholder="Leave a message!" required></textarea>
+        </p>
+        <input type="submit" class="submit-form">
+      </form>
+    </div>
+  </div>
+</section>
+
+
+
+<%-include("Partials/footer.ejs")%>
