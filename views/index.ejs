@@ -37,7 +37,7 @@
                     <%= post.subtitle%>
                   </p>
                   <p class="author">
-                    Blog post by <strong><%= post.author  %> </strong> on 25 March, <%= new Date().getFullYear()%>
+                    Blog post by <strong><%= post.author  %> </strong> on new <%=Date().toLocaleString('default', { month: 'long' })%>
                   </p>
                 </a>
               </div>
